@@ -28,3 +28,10 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :mongodb, endpoint: "mongodb://192.1.1.1:27017/dbname"
+
+config :mariaex, host: "192.1.1.1", database: "app"
+
+  
+

@@ -17,11 +17,13 @@ defmodule CliTest do
   end
 
   test "parsing function process -> call to capterra module" do
-    assert FeedProducts.CLI.process({"capterra", ["files/capterra.yaml"]}) == 'capterra'
+    {result, _} = FeedProducts.CLI.process({"capterra", ["files/capterra.yaml"]})
+    assert result == :ok
   end
 
   test "parsing function process -> call to softwareadvice module" do
-    assert FeedProducts.CLI.process({"softwareadvice", ["files/softwareadvice.json"]}) == 'softwareadvice'
+    {result, _} =  FeedProducts.CLI.process({"softwareadvice", ["files/softwareadvice.json"]})
+    assert result == :ok
   end
 
   #todo create test for parse json and yaml

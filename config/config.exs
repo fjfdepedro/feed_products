@@ -29,9 +29,25 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-config :mongodb, endpoint: "mongodb://192.1.1.1:27017/dbname"
+config :feed_products, ecto_repos: [Mysql.Repo]
 
-config :mariaex, host: "192.1.1.1", database: "app"
+config :feed_products, Mysql.Repo,
+  database: "mysql_database",
+  username: "dba",
+  password: "pass",
+  hostname: "localhost",
+  port: "3306"
 
+
+"""
+bbdd mongodb
+config :feed_products, Repo,
+  adapter: Mongo.Ecto,
+  database: "mongo_database",
+  username: "dba",
+  password: "pass",
+  hostname: "localhost"
+  port: "27017"
+"""
   
 
